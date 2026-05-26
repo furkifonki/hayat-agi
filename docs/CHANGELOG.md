@@ -8,11 +8,31 @@ Format based on [Keep a Changelog](https://keepachangelog.com/). Sprint-based en
 
 ## [Unreleased]
 
-### Planned (Sprint 3+)
-- Emergency incident creation flow
-- Responder onboarding and verification
-- Push notifications and matching
-- Admin operations dashboard
+### Planned (Sprint 5+)
+- Responder availability and live location
+- Push notifications and incident matching
+- Full admin operations dashboard (Sprint 8)
+
+---
+
+## Sprint 4 — Responder Onboarding & Verification (2026-05-26)
+
+### Added
+- **Mobile:** `responder/onboarding` — role selection, license fields, document upload, terms acceptance
+- **Mobile:** `responder-service` — submit application, upload to `responder-documents`, consent recording
+- **Edge Function:** `verify-document-status` — admin approve/reject, profile approval, audit log, notification queue
+- **Admin:** `/login`, `/review` — pending document queue with approve/reject
+- **Shared:** `DocumentType`, `getRequiredDocumentType`, `verifyDocumentStatusSchema`, `RESPONDER_TERMS_SHORT`
+
+### Changed
+- Profile and responder home screens link to onboarding; rejected users can re-apply
+- Admin home links to document review flow
+
+### Deploy notes
+```bash
+npx supabase functions deploy verify-document-status
+```
+Ensure `0002_storage_setup.sql` ran and admin user has `is_admin = true`.
 
 ---
 

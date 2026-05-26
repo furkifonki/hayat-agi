@@ -89,3 +89,21 @@ export const responderProfileSchema = z.object({
 });
 
 export type ResponderProfileInput = z.infer<typeof responderProfileSchema>;
+
+export const verifyDocumentStatusSchema = z
+  .object({
+    document_id: z.string().uuid(),
+    action: z.enum(['approve', 'reject']),
+    rejection_reason: z.string().min(3).max(500).optional(),
+  })
+  .superRefine((data, ctx) => {
+    if (data.action === 'reject' && !data.rejection_reason?.trim()) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Red nedeni zorunludur',
+        path: ['rejection_reason'],
+      });
+    }
+  });
+
+export type VerifyDocumentStatusInput = z.infer<typeof verifyDocumentStatusSchema>;

@@ -107,13 +107,13 @@ Citizen creates incident with location; incident visible in database and active 
 **Goal:** Responders can onboard; admins can verify.
 
 ### Tasks
-- [ ] Responder profile form
-- [ ] Document upload to `responder-documents` bucket
-- [ ] Storage RLS policies
-- [ ] Admin document review (basic UI)
-- [ ] `verify-document-status` Edge Function
-- [ ] Approve/reject with reasons
-- [ ] Verification status push notifications
+- [x] Responder profile form (mobile `responder/onboarding`)
+- [x] Document upload to `responder-documents` bucket (`expo-document-picker`)
+- [x] Storage RLS policies (migration `0002_storage_setup.sql`)
+- [x] Admin document review (basic UI `/review`)
+- [x] `verify-document-status` Edge Function
+- [x] Approve/reject with reasons
+- [x] Verification status push notifications (queued + Expo send when token exists)
 
 ### Deliverable
 Approved responder role works end-to-end.

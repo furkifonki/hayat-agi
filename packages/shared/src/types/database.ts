@@ -6,6 +6,7 @@ import type {
   ResponderType,
   VerificationStatus,
 } from '../constants/emergency-types';
+import type { DocumentType } from '../constants/responder-documents';
 
 export type UserType = 'citizen' | 'responder' | 'citizen_and_responder' | 'admin';
 
@@ -49,6 +50,22 @@ export interface ResponderProfile {
   verified_at: string | null;
   rejection_reason: string | null;
   accepted_responder_terms: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export type DocumentStatus = 'pending' | 'approved' | 'rejected' | 'expired';
+
+export interface ResponderDocument {
+  id: string;
+  responder_profile_id: string;
+  user_id: string;
+  document_type: DocumentType;
+  storage_path: string;
+  status: DocumentStatus;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  rejection_reason: string | null;
   created_at: string;
   updated_at: string;
 }

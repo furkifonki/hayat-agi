@@ -21,6 +21,9 @@ export const PUSH_CONSENT_SHORT =
 export const RESPONDER_VERIFICATION_SHORT =
   'Yardımcı olarak acil çağrı alabilmek için kimlik ve mesleki belgeleriniz yönetici tarafından incelenir.';
 
+export const RESPONDER_TERMS_SHORT =
+  'Gönüllü yardımcı olarak yalnızca güvenli koşullarda destek vereceğimi, 112\'nin yerine geçmeyeceğimi ve yanlış alarm oluşturmayacağımı kabul ediyorum.';
+
 export const RESPONDER_SAFETY_NOTICE =
   'Kendi güvenliğiniz önceliklidir. Trafik, yangın, saldırı, kavga, yakıt sızıntısı veya başka bir risk varsa olay yerine yaklaşmayın. 112\'nin arandığından emin olun.';
 
