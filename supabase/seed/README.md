@@ -1,0 +1,10 @@
+-- Seed instructions (manual — do not run in production without review)
+--
+-- 1. Create test users via mobile app signup
+-- 2. Promote admin:
+--    update public.profiles set is_admin = true, user_type = 'admin'
+--    where email = 'admin@example.com';
+--
+-- 3. Optional: insert legal document placeholders for consent versioning
+-- insert into public.legal_documents (document_type, version, title, content_md, is_active, published_at)
+-- values ('terms_of_use', '1.0', 'Kullanım Şartları v1', '# Taslak', true, now());
